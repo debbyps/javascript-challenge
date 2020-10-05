@@ -22,7 +22,7 @@ tableData.forEach((sighting) => {
 
 const runEnter = () => {
 
-    // tbody.html("");
+    tbody.html("");
     // Prevent the page from refreshing
     d3.event.preventDefault();
     
@@ -32,10 +32,13 @@ const runEnter = () => {
         inputValue = inputElement.property("value");
   
     console.log(inputValue);
-    console.log(tableData);
-  
+
     const filteredData = tableData.filter(ufodata => ufodata.datetime === inputValue);
     console.log(filteredData);
+
+    filteredData.forEach((ufoFiltered) => {
+        
+    })
 
 }; 
 // Create event handlers 
