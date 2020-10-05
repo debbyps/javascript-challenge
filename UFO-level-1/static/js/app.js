@@ -1,7 +1,5 @@
 // put the data.js into a variable and use d3 to select the tbody
 let tableData = data,
-    // button = d3.select("#filter-btn"),
-    // form = d3.select("#form");
     tbody = d3.select("tbody");
  
 
@@ -17,5 +15,8 @@ tableData.forEach((sighting) => {
     });
 
 });
+
+    // button = d3.select("#filter-btn"),
+    // form = d3.select("#form");
 
 //get all data from table but only display the filtered data per user input
