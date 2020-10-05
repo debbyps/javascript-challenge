@@ -1,8 +1,8 @@
 // put the data.js into a variable and use d3 to select the tbody
 let tableData = data,
     tbody = d3.select("tbody"),
-    button = d3.select("#filter-btn");
-    // form = d3.select("#form");;
+    button = d3.select("#filter-btn"),
+    form = d3.select("#form");
  
 
 // get all data from table data and put it into a table by creating an object which can then be split out to a value key pair
