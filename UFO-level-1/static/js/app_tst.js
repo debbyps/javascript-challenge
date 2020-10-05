@@ -5,11 +5,18 @@ let tableData = data,
     tbody = d3.select("tbody");
  
 
-// get all data from CSV and put it into a table
+// get all data from data.js and puts it into a table by first creating an object 
+// which can then be split out to a value key pair
 tableData.forEach((sighting) => {
     console.log(sighting);
-    var datarow = tbody.append("tr");
-});
+    let datarow = tbody.append("tr");
 
+    Object.entries(sighting).forEach(([key,value]) => {
+        console.log(key,value);
+        let box = datarow.append("td");
+        box.text(value);
+    });
+
+});
 
 //get all data from table but only display the filtered data per user input
