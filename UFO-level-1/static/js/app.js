@@ -22,7 +22,7 @@ tableData.forEach((sighting) => {
 
 const runEnter = () => {
 
-    tbody.html("");
+    // tbody.html("");
     // Prevent the page from refreshing
     d3.event.preventDefault();
     
