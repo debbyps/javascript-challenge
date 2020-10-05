@@ -1,12 +1,11 @@
-// from data.js
+// put the data.js into a variable and use d3 to select the tbody
 let tableData = data,
     // button = d3.select("#filter-btn"),
     // form = d3.select("#form");
     tbody = d3.select("tbody");
  
 
-// get all data from data.js and puts it into a table by first creating an object 
-// which can then be split out to a value key pair
+// get all data from table data and put it into a table by creating an object which can then be split out to a value key pair
 tableData.forEach((sighting) => {
     console.log(sighting);
     let datarow = tbody.append("tr");
