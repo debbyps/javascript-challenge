@@ -1,45 +1,22 @@
 // from data.js
 let tableData = data,
-    button = d3.select("#filter-btn"),
-    form = d3.select("#form");
+    // button = d3.select("#filter-btn"),
+    // form = d3.select("#form");
+    tbody = d3.select("tbody");
+ 
 
-// YOUR CODE HERE!
-// Complete the event handler function for the form
-const runEnter = () => {
+// get all data from data.js and puts it into a table by first creating an object 
+// which can then be split out to a value key pair
+tableData.forEach((sighting) => {
+    console.log(sighting);
+    let datarow = tbody.append("tr");
 
-    // Prevent the page from refreshing
-    d3.event.preventDefault();
-    
-    // Select the input element and get the raw HTML node
-    // Get the value property of the input element
-    let inputElement = d3.select("#datetime"), 
-        inputValue = inputElement.property("value");
-  
-    console.log(inputValue);
-    console.log(tableData);
-  
-    const filteredData = tableData.filter(ufodata => ufodata.datetime === inputValue);
-    console.log(filteredData);
+    Object.entries(sighting).forEach(([key,value]) => {
+        console.log(key,value);
+        let box = datarow.append("td");
+        box.text(value);
+    });
 
-    let dates = filteredData.map(ufosighting => ufosighting.datetime)
-    let cities = filteredData.map(ufosighting => ufosighting.city)
-    let states  = filteredData.map(ufosighting => ufosighting.state)
-    let countries = filteredData.map(ufosighting => ufosighting.country)
-    let shapes = filteredData.map(ufosighting => ufosighting.shape)
-    let durMins = filteredData.map(ufosighting => ufosighting.durationMinutes)
-    let commenting = filteredData.map(ufosighting => ufosighting.comments)
+});
 
-    console.log("datetimes: ",dates)
-    console.log("cities: ",cities)
-    console.log("states: ",states)
-    console.log("countries: ",countries)
-    console.log("shapes: ",shapes)
-    console.log("durMins: ",durMins)
-    console.log("commenting: ",commenting)
-
-    dates.append("td").text(datetime);
-
-}; 
-// Create event handlers 
-button.on("click", runEnter);
-form.on("submit",runEnter);
+//get all data from table but only display the filtered data per user input
