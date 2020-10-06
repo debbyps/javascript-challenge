@@ -19,7 +19,6 @@ tableData.forEach((sighting) => {
 });
 
 //select which rows to display based on filter from date form entry
-
 const runEnter = () => {
 
     tbody.html("");
