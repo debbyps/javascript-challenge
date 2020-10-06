@@ -1,4 +1,4 @@
-// put the data.js into a variable and use d3 to select the tbody
+// put the data.js into a variable and use d3 to select different objects
 let tableData = data,
     tbody = d3.select("tbody"),
     button = d3.select("#filter-btn"),
