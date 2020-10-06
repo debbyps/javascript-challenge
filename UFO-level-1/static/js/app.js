@@ -37,8 +37,14 @@ const runEnter = () => {
     console.log(filteredData);
 
     filteredData.forEach((ufoFiltered) => {
-        
-    })
+            let datarow = tbody.append("tr");
+
+            Object.entries(ufoFiltered).forEach(([key, value]) => {
+                console.log(key, value);
+                let box = datarow.append("td");
+                box.text(value);
+            });
+        });
 
 }; 
 // Create event handlers 
