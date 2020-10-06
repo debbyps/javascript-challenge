@@ -50,5 +50,3 @@ const runEnter = () => {
 // Create event handlers 
 button.on("click", runEnter);
 form.on("submit",runEnter);
-
-//get all data from table but only display the filtered data per user input
